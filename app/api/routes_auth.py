@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from app.core.security import create_token
 
@@ -18,8 +18,14 @@ def login(auth: AuthInput):
     if (auth.username == "admin") and (auth.password == "admin"):
         token = create_token({'sub': auth.username})
 
-        return{'acess_token': token}
+        return{'access_token': token}
     
-    return {'error': 'Invalid credentials'}
+    
+    raise HTTPException(
+        status_code=401,
+        detail="Invalid credentials"
+    )
+    
+    
 
 
