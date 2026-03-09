@@ -1,3 +1,9 @@
 python-dotenv
 jose
 fastapi
+numpy
+pandas
+scikit-learn
+joblib
+xgboost
+redis
