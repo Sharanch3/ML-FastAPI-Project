@@ -1,6 +1,7 @@
 python-dotenv
-jose
+python-jose
 fastapi
+uvicorn
 numpy
 pandas
 scikit-learn
